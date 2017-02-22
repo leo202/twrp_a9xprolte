@@ -57,8 +57,15 @@ BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom msm_rtb.filter=0x
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --base 0x80000000 --ramdisk_offset 0x02000000 --tags_offset 0x01E00000 --board RLRPA9XP000KU --dt device/samsung/a9xprolte/dt.img
 
+# File systems
+BOARD_HAS_LARGE_FILESYSTEM := true
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
+
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
+TW_INCLUDE_CRYPTO := true
+TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
 # Recovery
 RECOVERY_VARIANT := twrp
