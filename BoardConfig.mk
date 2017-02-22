@@ -32,6 +32,13 @@ TARGET_BOARD_PLATFORM := msm8952
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno510
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
+# Power
+TARGET_POWERHAL_VARIANT := qcom
+
+# Qualcomm
+#BOARD_USES_QCOM_HARDWARE := true
+BOARD_USES_QC_TIME_SERVICES := true
+
 # Flags
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
@@ -50,12 +57,20 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
+TARGET_CPU_CORTEX_A53 := true
+TARGET_USES_64_BIT_BINDER := true
+ENABLE_CPUSETS := true
+
+
 # Kernel Prebuilt
 TARGET_PREBUILT_KERNEL := device/samsung/a9xprolte/kernel
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/a9xprolte/mkbootimg.mk
 BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --base 0x80000000 --ramdisk_offset 0x02000000 --tags_offset 0x01E00000 --board RLRPA9XP000KU --dt device/samsung/a9xprolte/dt.img
+
+# Charger
+BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # File systems
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -81,6 +96,9 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 4194304000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 26363277312
 BOARD_FLASH_BLOCK_SIZE := 131072
 
+# Sensors
+USE_SENSOR_MULTI_HAL := true
+
 # TWRP
 BOARD_SUPPRESS_SECURE_ERASE := true
 RECOVERY_SDCARD_ON_DATA := true
@@ -93,3 +111,7 @@ TW_INCLUDE_CRYPTO := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_NO_REBOOT_BOOTLOADER := true
 TW_THEME := portrait_hdpi
+
+# Logcat
+TWRP_INCLUDE_LOGCAT := true
+TARGET_USES_LOGD := true
