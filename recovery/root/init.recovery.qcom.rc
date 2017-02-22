@@ -1,11 +1,10 @@
-on init
-    wait /dev/ion
-    wait /dev/qseecom
+on property:ro.crypto.state=encrypted
+    start sbinqseecomd
 
-    chown system system /dev/ion
-    chown system drmrpc /dev/qseecom
-
-    start qseecomd
-
-service qseecomd /sbin/qseecomd
+# Separate copy needed to use /sbin/linker64 instead of /system/bin/linker64
+service sbinqseecomd /sbin/qseecomd
+    oneshot
     disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
