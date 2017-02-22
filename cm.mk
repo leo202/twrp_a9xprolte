@@ -21,6 +21,6 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 PRODUCT_NAME := cm_a9xprolte
-PRODUCT_DEVICE := a0xprolte
+PRODUCT_DEVICE := a9xprolte
 PRODUCT_BRAND := Samsung
 PRODUCT_MANUFACTURER := Samsung
