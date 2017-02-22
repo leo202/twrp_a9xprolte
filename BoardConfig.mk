@@ -51,11 +51,11 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
 # Kernel Prebuilt
-TARGET_PREBUILT_KERNEL := device/samsung/a9xprolte/kernel
-BOARD_CUSTOM_BOOTIMG_MK := device/samsung/a9xprolte/mkbootimg.mk
-BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk androidboot.selinux=permissive
-BOARD_KERNEL_PAGESIZE := 2048
-BOARD_MKBOOTIMG_ARGS := --base 0x80000000 --ramdisk_offset 0x02000000 --tags_offset 0x01E00000 --board RLRPA9XP000KU --dt device/samsung/a9xprolte/dt.img
+#TARGET_PREBUILT_KERNEL := device/samsung/a9xprolte/kernel
+#BOARD_CUSTOM_BOOTIMG_MK := device/samsung/a9xprolte/mkbootimg.mk
+#BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk androidboot.selinux=permissive
+#BOARD_KERNEL_PAGESIZE := 2048
+#BOARD_MKBOOTIMG_ARGS := --base 0x80000000 --ramdisk_offset 0x02000000 --tags_offset 0x01E00000 --board RLRPA9XP000KU --dt device/samsung/a9xprolte/dt.img
 
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
